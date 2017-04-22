@@ -1,27 +1,17 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
+# [PublishMyPage](#)
 
-[Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+## Goal
 
-## Getting Started
+Generate public landing pages for FB Group pages.
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/creative/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-creative.git`
-* Fork the repo
+## What problem are we solving and why?
 
-## Bugs and Issues
+We devote a lot of time to growing and cultivating our professional and personal Facebook communities, some of us acting as admins to groups with 8,000+ members. However, it is hard to share these accomplishments with people outside of Facebook because of potential lack of access. Not only does it perhaps potential appear less professional to potential hiring managers to include a Facebook link, it is also impossible to view these pages without a Facebook account. We are proud of our communities online and want to be able to share these accomplishments with people outside of Facebook unequivocally.
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-creative/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/creative/).
+## Team
 
-## Creator
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+PublishMyPage was created by
+* **[Casey Caruso](https://www.linkedin.com/in/casey-k-caruso/)**
+* **[Shriya Nevatia](https://www.linkedin.com/in/shriyanevatia)**
+* **[Ana Pischl](https://www.linkedin.com/in/anapischl/)**
+* **[Maggie White](https://www.linkedin.com/in/whitemaggie/)**
