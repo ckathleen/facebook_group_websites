@@ -101,10 +101,8 @@
     console.log('Welcome!  Fetching your information.... ');
 
     FB.api('/me/groups/', function(response) {
-      sessionStorage.setItem('groups', JSON.stringify(response.data))
-      console.log('PARSED', JSON.parse(sessionStorage.groups))
-      
-    // window.location.href = "/home.html";
+        sessionStorage.setItem('groups', JSON.stringify(response.data))
+        window.location.href = "/home.html";
     }, {scope: 'user_managed_groups'});
   }
 </script>

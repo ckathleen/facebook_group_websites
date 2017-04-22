@@ -3,140 +3,114 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>Facebook Group Website Maker</title>
+	<title>Facebook Group Website Maker</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<!-- Custom Fonts -->
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+	<!-- Plugin CSS -->
+	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
-    </head>
-    <body>
-    	<script>
+	<!-- Theme CSS -->
+	<link href="css/creative.min.css" rel="stylesheet">
+</head>
+<body>
+	<script>
 		  // This is called with the results from from FB.getLoginStatus().
 		  function statusChangeCallback(response) {
-		    // The response object is returned with a status field that lets the
-		    // app know the current login status of the person.
-		    // Full docs on the response object can be found in the documentation
-		    // for FB.getLoginStatus().
-		    if (response.status === 'connected') {
+		  	if (response.status === 'connected') {
 		      // Logged into your app and Facebook.
 		    } else {
 		      // The person is not logged into your app or we are unable to tell.
 		    }
 		  }
 
-		  // This function is called when someone finishes with the Login
-		  // Button.  See the onlogin handler attached to it in the sample
-		  // code below.
-		  function checkLoginState() {
-		    FB.getLoginStatus(function(response) {
-		      statusChangeCallback(response);
-		    });
-		  }
-
 		  window.fbAsyncInit = function() {
-		  FB.init({
-		    appId      : '124921888054219',
+		  	FB.init({
+		  		appId      : '124921888054219',
 		    cookie     : true,  // enable cookies to allow the server to access 
 		                        // the session
 		    xfbml      : true,  // parse social plugins on this page
 		    version    : 'v2.8' // use graph api version 2.8
 		  });
-
-		  // Now that we've initialized the JavaScript SDK, we call 
-		  // FB.getLoginStatus().  This function gets the state of the
-		  // person visiting this page and can return one of three states to
-		  // the callback you provide.  They can be:
-		  //
-		  // 1. Logged into your app ('connected')
-		  // 2. Logged into Facebook, but not your app ('not_authorized')
-		  // 3. Not logged into Facebook and can't tell if they are logged into
-		  //    your app or not.
-		  //
-		  // These three cases are handled in the callback function.
-
-		  FB.getLoginStatus(function(response) {
-		    statusChangeCallback(response);
-		  });
+		  	FB.getLoginStatus(function(response) {
+		  		statusChangeCallback(response);
+		  	});
 
 		  };
 
 		  // Load the SDK asynchronously
 		  (function(d, s, id) {
-		    var js, fjs = d.getElementsByTagName(s)[0];
-		    if (d.getElementById(id)) return;
-		    js = d.createElement(s); js.id = id;
-		    js.src = "/sdk.js";
-		    fjs.parentNode.insertBefore(js, fjs);
+		  	var js, fjs = d.getElementsByTagName(s)[0];
+		  	if (d.getElementById(id)) return;
+		  	js = d.createElement(s); js.id = id;
+		  	js.src = "/sdk.js";
+		  	fjs.parentNode.insertBefore(js, fjs);
 		  }(document, 'script', 'facebook-jssdk'));
 
-		  // Here we run a very simple test of the Graph API after login is
-		  // successful.  See statusChangeCallback() for when this call is made.
-		  function testAPI() {
-		    console.log('Welcome!  Fetching your information.... ');
-
-		    FB.api('/me/groups/', function(response) {
-		      console.log('Response for testAPI', response)
-		      sessionStorage.setItem('groups', response.data)
-		    window.location.href = "/home.html";
-		    }, {scope: 'user_managed_groups'});
-		  }
-		function fbLogout() {
-		        FB.logout(function (response) {
+		  function fbLogout() {
+		  	FB.logout(function (response) {
 		            //Do what ever you want here when logged out like reloading the page
 		            window.location.reload();
-		        });
-		    }
+		          });
+		  }
 		</script>
 		<div class='container'>
 			<fb:login-button autologoutlink="true"></fb:login-button>
-	    	CHOOSE YOUR GROUP....
-	    	<form class='select-group-form'>
-	    		<div class="form-group">
-	    			<select class='group-select form-control'></select>
-    			</div>
-	    	</form>
+			<form class='select-group-form'>
+				<div class="form-group">
+					<p>What Group would you like to choose?</label>
+					<select class='group-select form-control'></select>
+				</div>
+				<button class='btn-select-group'>NEXT</button>
+			</form>
 		</div>
-		    <!-- jQuery -->
-	    <script src="vendor/jquery/jquery.min.js"></script>
+		<!-- jQuery -->
+		<script src="vendor/jquery/jquery.min.js"></script>
 
-	    <!-- Bootstrap Core JavaScript -->
-	    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	    <!-- Plugin JavaScript -->
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-	    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-	    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<!-- Plugin JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+		<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-	    <!-- Theme JavaScript -->
-	    <script src="js/creative.min.js"></script>
+		<!-- Theme JavaScript -->
+		<script src="js/creative.min.js"></script>
 		<script>
-		$(function() {
-			var groups = JSON.parse(sessionStorage.getItem("groups"));
-			let option = 
-			console.log('groups', groups)
-			groups.map((group) => {
-				var option = $('<option>')
-				option.value = group.name
-				option.text(group.name)
-				$('.group-select').append(option)
+			$(function() {
+				function getGroupDetails (id) {
+					FB.api('/' + id + '/', function(response) {
+						console.log('getGroup', response)
+			    })
+				}
+
+				var groups = JSON.parse(sessionStorage.getItem("groups"));
+				groups.map((group) => {
+					var option = $('<option>')
+					option.attr('value', group.id)
+					option.text(group.name)
+					$('.group-select').append(option)
+				})
+
+				$('.btn-select-group').on('click', () => {
+					event.preventDefault()
+					var groupId = $('.group-select option:selected').val()
+					getGroupDetails(groupId)
+				})
 			})
-		})
 		</script>
-    </body>
-</html>
+	</body>
+	</html>
