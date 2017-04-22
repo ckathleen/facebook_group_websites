@@ -69,22 +69,22 @@
 		<script src="js/creative.min.js"></script>
 		<script>
 			$(function() {
-				function handleCountingMembers(response){
+				function handleCountingMembers(response, member_count=0){
 			    var members = response.data
-			    for( var i in members){
-		        var members = members[i];
-			    }
+					member_count += response.data.length
 			    if(response.paging.next){
 		        console.log('fetching next page...');
 		        $.getJSON(response.paging.next, function(response){                
-		            handleCountingMembers(response);
+		            handleCountingMembers(response, member_count);
 		        });
+			    } else {
+			    	console.log('LENGTH', member_count)
 			    }
-			    console.log(members, members.length)
 				} 
 
 				function getFbMembers (id) {
-					FB.api('/' + id + '/members', function(response) {
+					var accessToken = sessionStorage.getItem('accessToken')
+					FB.api('/' + id + '/members?access_token=' + accessToken, function(response) {
 						console.log(response)
 						handleCountingMembers(response)
 			    })
