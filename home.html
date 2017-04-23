@@ -96,22 +96,24 @@
 		<script>
 			$(function() {
 				function handleCountingMembers(response, member_count=0){
-			    var members = response.data
-					member_count += response.data.length
-			    if(response.paging.next){
-			        $.getJSON(response.paging.next, function(response){                
-			            handleCountingMembers(response, member_count);
-			        })
-			    } else {
-			    	sessionStorage.setItem('member_count', member_count)
-			    	console.log('HIDE')
-			    	$('#loader').hide()
-			    }
+				    var members = response.data
+				    if (response.data) {
+				    	member_count += response.data.length
+				    }
+				    if(response.paging.next){
+				        $.getJSON(response.paging.next, function(response){                
+				            handleCountingMembers(response, member_count);
+				        })
+				    } else {
+				    	sessionStorage.setItem('member_count', member_count)
+				    	$('#loader').hide()
+			    	}
 				} 
 
 				function getFbDescription (id) {
 					var accessToken = sessionStorage.getItem('accessToken')
 					FB.api('/' + id + '?access_token=' + accessToken, {fields: ['description', 'name', 'owner', 'privacy']}, function(response) { 
+						console.log(response)
 						sessionStorage.setItem('owner', response.owner.name)
 						sessionStorage.setItem('privacy', response.privacy)
 						sessionStorage.setItem('name', response.name)
@@ -124,7 +126,7 @@
 					var accessToken = sessionStorage.getItem('accessToken')
 					FB.api('/' + id + '/members?access_token=' + accessToken, function(response) {
 						handleCountingMembers(response)
-			    })
+			    	})
 				}
 
 				var groups = JSON.parse(sessionStorage.getItem("groups"));
