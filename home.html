@@ -109,18 +109,30 @@
     </header>
 
     <div class="container">
-    	<form class='select-group-form'>
-			<div class="form-group">
-				<p>What Group would you like to choose?</p>
-				<div class="all-groups">
-					
-				</div>
+
+			<div class="col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-1">
+		    	<form class='select-group-form'>
+					<div class="form-group"><p>What Group would you like to choose?</p></div>
+					<div class="all-groups"><!-- Groups show up in here --></div>
+					<button class='btn-select-group'>NEXT</button>
+				</form>
+				<fb:login-button autologoutlink="true"></fb:login-button>
 			</div>
-			<button class='btn-select-group'>NEXT</button>
-		</form>
-		<fb:login-button autologoutlink="true"></fb:login-button>
+
     </div>
 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p class="copyright text-muted">
+                        Copyright &copy; PublishMyPage <br>
+                        <a href="https://github.com/ckathleen/facebook_group_websites/">View Source on Github</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 		
 		<!-- END OF PAGE UI CONTENT -->
 
@@ -149,10 +161,10 @@
 				groups.map((group) => {
 					var option = $('<div>')
 					option.attr('value', group.id)
-					option.attr('width', '300px')
 					option.attr('height', '100px')
-					option.css('background-color', 'pink')
+					option.css('background-color', '#e83781')
 					option.css('margin', '10px 0px')
+					option.css('padding', '10px')
 					option.css('border', '1px solid grey')
 					option.css('color', 'white')
 					option.text(group.name)
