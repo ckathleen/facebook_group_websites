@@ -87,6 +87,14 @@
                 </button>-->
                 <a class="navbar-brand" href="index.html">PublishMyPage</a>
             </div>
+			<div>
+				<ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <fb:login-button autologoutlink="true"></fb:login-button>
+                    </li>
+                </ul>
+			</div>
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -101,7 +109,7 @@
                 <div class="col-lg-6 col-lg-offset-2 col-md-8 col-md-offset-1">
                     <div class="site-heading">
                         <h2 class="post-title">Select your groups</h2>
-                        <p>Don't see any groups? <br><em>Only admins can generate pages. Please contact the admin of the Facebook Group for which you’d like to generate a page.</em></p>
+                        <p class="gray-aside smaller-text"><em>Don't see any groups? <br>Only admins can generate pages. Please contact the admin of the Facebook Group for which you’d like to generate a page.</em></p>
                     </div>
                 </div>
             </div>
@@ -114,9 +122,9 @@
 		    	<form class='select-group-form'>
 					<div class="form-group"><p>What Group would you like to choose?</p></div>
 					<div class="all-groups"><!-- Groups show up in here --></div>
+					<br>
 					<button class='btn-select-group'>NEXT</button>
 				</form>
-				<fb:login-button autologoutlink="true"></fb:login-button>
 			</div>
 
     </div>
@@ -159,16 +167,19 @@
 
 				var groups = JSON.parse(sessionStorage.getItem("groups"));
 				groups.map((group) => {
-					var option = $('<div>')
+					var option = $('<div class="option-box">')
 					option.attr('value', group.id)
-					option.attr('height', '100px')
-					option.css('background-color', '#e83781')
-					option.css('margin', '10px 0px')
+					option.css('width', '50%')
+					option.css('margin', '10px')
 					option.css('padding', '10px')
-					option.css('border', '1px solid grey')
-					option.css('color', 'white')
+					option.css('font-size', '16px')
+					option.css('display', 'inline-block')
+					option.css('background-color', '#fcfcfc')
+					option.css('border', '1.3px solid #e83781')
+					option.css('color', '#e83781')
 					option.text(group.name)
 					$('.all-groups').append(option)
+					$('.all-groups').append('<br>')
 				})
 
 				$('.btn-select-group').on('click', () => {

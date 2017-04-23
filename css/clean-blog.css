@@ -433,4 +433,21 @@ a .navbar-brand {
   width: 300px;
 }
 
+.gray-aside {
+  color: #73788c;
+}
+
+.navbar-right {
+  padding: 10px;
+}
+
+.option-box:hover {
+  background-color: #e83781;
+  border: 1px solid grey;
+  color: white;
+}
+
+.smaller-text {
+  font-size: 16px;
+}
 
